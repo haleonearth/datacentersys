@@ -1,0 +1,608 @@
+/**
+ * Global
+ */
+
+%heading {
+	text-transform: uppercase;
+}
+
+h3, .h3,
+h4, .h4 {
+	@extend %heading;
+	color: theme-color('brand-blue');
+}
+
+h2, .h2,
+h5, .h5 {
+	@extend %heading;
+	color: theme-color('brand-red')
+}
+
+/**
+ * Misc
+ */
+
+body {
+	overflow-x: hidden;
+}
+
+.screen-reader-text {
+	@extend .sr-only;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.social-image {
+	max-width: 3rem;
+}
+
+.container-80 {
+	@extend .mx-auto;
+
+	max-width: 80%;
+}
+
+.entry-content {
+	ul,
+	ol,
+	p {
+		font-size: 20px;
+	}
+}
+
+.with-padding {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+/**
+ * Header
+ */
+
+.site-header {
+	padding-bottom: 3rem;
+}
+
+.custom-logo-link {
+	@include media-breakpoint-up(lg) {
+		margin-top: -3rem;
+	}
+}
+
+/*
+ * Nav
+ */
+
+.dropdown-menu {
+	display: none;
+}
+
+
+#primary-menu {
+	@include media-breakpoint-up(lg) {
+		.menu-item:not(:last-child) .nav-link {
+			border-right: 1px solid theme-color('dark');
+		}
+	}
+
+	.nav-link {
+		@extend .lead;
+		@extend .py-0;
+	}
+}
+
+/**
+ * Blog
+ */
+
+.blog,
+.archive {
+	word-break: break-word;
+}
+
+article.post {
+	float: left;
+	width: 100%;
+	border-bottom: 2px solid gray("200");
+
+	.entry-title {
+		font-weight: 700;
+	}
+
+	.entry-meta {
+		color: gray("600");
+
+		a {
+			color: gray("700");
+		}
+	}
+
+	.entry-footer {
+		font-size: 0.9em;
+
+		span {
+			margin-right: 0.5rem;
+		}
+
+		.cat-links {
+			display: block;
+		}
+
+		.comments-link {
+			display: block;
+		}
+	}
+}
+
+.sticky {
+	padding: 1rem;
+	background-color: $gray-200;
+}
+
+/*
+ * Sidebar
+ */
+
+#secondary {
+	word-break: break-word;
+}
+
+// Form
+.search-form {
+	padding-top: 2em;
+	padding-bottom: 2em;
+
+	.search-field {
+		@extend .form-control;
+	}
+
+	.search-submit {
+		@extend .btn;
+		@extend .btn-secondary;
+	}
+}
+
+/**
+ * Footer
+ */
+
+.page-id-563 .footer-cta,
+.home .footer-cta {
+	display: none;
+}
+
+.footer-cta {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+/*
+ * Comments
+ */
+
+#comments {
+	margin-top: 2em;
+	max-width: 100%;
+
+	#author,
+	#email,
+	#url,
+	#comment {
+		@extend .form-control;
+	}
+
+	#submit {
+		@extend .btn;
+		@extend .btn-secondary;
+	}
+
+	@include media-breakpoint-up(lg) {
+		max-width: 80%;
+	}
+}
+
+/**
+ * Hero
+ */
+
+.section-hero {
+	padding-top: 8rem;
+	padding-bottom: 16rem;
+	background-image: url('/wp-content/uploads/2021/03/hero.jpg');
+	background-size: cover;
+}
+
+.hero-content {
+	background-color: rgba(theme-color('brand-red'), 0.8);
+}
+
+/**
+ * Service Image Blocks
+ */
+
+.service-image-blocks-grid {
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-areas:
+		"block block block"
+}
+
+.service-image-block:hover {
+	img {
+		-webkit-filter: grayscale(100%);
+		-moz-filter: grayscale(100%);
+		-o-filter: grayscale(100%);
+		-ms-filter: grayscale(100%);
+		filter: grayscale(100%);
+	}
+}
+
+.block-content {
+	@extend .text-light;
+	@extend .py-3;
+	@extend .text-uppercase;
+
+	z-index: 10000;
+	top: 50%;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	background-color: rgba(black, 0.8);
+	transform: translateY(-50%);
+}
+
+/**
+ * News
+ */
+
+.news-grid {
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: 1fr;
+
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+
+.news-item {
+	display: grid;
+	grid-gap: 1.5rem;
+	grid-template-columns: 1fr;
+
+	.img-container {
+		max-container: 250px;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: 2fr 1fr;
+	}
+}
+
+/**
+ * Page
+ */
+
+%page-header-common {
+	.entry-title {
+		@extend .text-dark;
+
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: bold;
+	}
+
+	.entry-content {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+}
+
+.page-template-services {
+	.entry-content {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+}
+
+// Custom page header
+%page-header-gray {
+	background-color: $gray-200;
+	border-top: 1px solid $gray-300;
+	border-bottom: 6px solid $gray-400;
+}
+
+.single-resources {
+	@extend %page-header-common;
+
+	.entry-header-background {
+		padding-top: 7rem;
+		padding-bottom: 7rem;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 8px;
+
+		@include media-breakpoint-up(lg) {
+			background-size: 100% auto;
+		}
+	}
+}
+
+.page-template-services,
+.page-template-resources,
+.page-template-default,
+.single-community_outreach,
+.single-staff,
+.single-gallery,
+.single-services,
+.single-solutions {
+	@extend %page-header-common;
+
+	.entry-header {
+		@extend %page-header-gray;
+
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+}
+
+
+/**
+ * Solutions post type
+ */
+
+
+/**
+ * Sidebar slider
+ */
+
+.sidebar-slider-container {
+	border-left: 1px solid lighten($dark, 10%);
+}
+.sidebar-slider-title {
+	@extend .h5;
+
+	margin-bottom: 4rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.sidebar-slide-image {
+	max-width: 12rem;
+	height: auto;
+}
+
+/**
+ * Testimonial
+ */
+
+.testimonial {
+	padding: 3rem;
+}
+
+.testimonial-quote {
+	font-size: 1.2rem;
+	color: theme-color( 'brand-blue' );
+}
+
+.testimonial-reviewer {
+	margin-bottom: 0;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+/**
+ * Testimonials slider
+ */
+
+.testimonials-slider-container {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	background-image: url('/wp-content/themes/datacentersys/img/testimonials_bg_1.jpg');
+	background-size: cover;
+
+	.testimonial-quote {
+		p {
+			@extend .text-light;
+		}
+	}
+
+	.testimonial-reviewer {
+		color: theme-color( 'brand-blue' );
+	}
+}
+
+
+/**
+ * Services pages
+ */
+
+.services-grid {
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-areas: 'service service';
+
+	@include media-breakpoint-up(lg) {
+		grid-template-areas: 'service service service service service';
+	}
+}
+
+.services-icon {
+	max-width: 5rem;
+}
+
+/**
+ * Additional content
+ */
+
+.additional-content-container {
+	margin-top: 2rem;
+	margin-bottom: 5rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+/**
+ * Resources
+ */
+
+.white-papers-list,
+.resources-list {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-areas: 'resources';
+
+	@include media-breakpoint-up(lg) {
+		grid-template-areas: 'resource resource resource';
+	}
+}
+
+
+.resources-sidebar-list {
+	ul {
+		@extend .ml-4;
+	}
+
+	& > li {
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+		margin-bottom: .5rem;
+		border-bottom: 1px solid #ccc;
+		text-transform: uppercase;
+	}
+}
+
+
+.resources-sidebar-link {
+	padding-top: .2rem;
+	padding-bottom: .2rem;
+
+	&.active {
+		border-bottom: 2px solid theme-color('brand-red');
+	}
+}
+
+/**
+ * Staff
+ */
+
+.single-staff {
+	.post-thumbnail {
+		margin-top: 3rem;
+		max-width: 18rem;
+	}
+}
+
+/**
+ * Page builder
+ */
+
+.red-blocks {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+/**
+ * Company page
+ */
+
+.leadership-team {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+.leadership-team-grid {
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: 1fr;
+
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+/**
+ * Content two columns
+ */
+
+.content-two-cols {}
+
+/**
+ * Team members
+ */
+.team-members-grid {
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+/**
+ * Community outreach
+ */
+
+.thesupportslist {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.community-outreach-grid {
+	display: grid;
+	grid-gap: 3rem;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+/**
+ * Slick
+ */
+
+.slick-slide img {
+	max-width: 120px;
+	margin-bottom: 2rem;
+
+	@include media-breakpoint-up(lg) {
+		max-width: 100%;
+		margin-bototm: 0;
+	}
+}
+
+/**
+ * Grid cards
+ */
+
+.grid-cards {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr;
+
+	.card-img-top {
+		max-width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: 1fr 1fr 1fr;
+
+
+		.card-img-top {
+			max-width: 100%;
+			max-height: 300px;
+			width: auto;
+		}
+	}
+}
