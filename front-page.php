@@ -66,20 +66,11 @@ get_header(); ?>
 
 <div id="primary" class="content-area col-12 no-gutters">
   <main id="main" class="site-main">
-    <div class="section-hero">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="hero-content text-light p-4 h3 col-12 col-lg-6">
-            <p>Connectivity failures can have a devastating impact on your company's operations, including operational
-              downtime, application latency, higher operational expenses and customer dissatisfaction.</p>
-
-            <a class="btn btn-black text-light btn-lg" href="/connectivity-solutions/">Learn About <strong>DCS' Solutions</strong></a>
-          </div>
-        </div><!-- .row -->
-      </div><!-- .container-fluid -->
+    <div class="hero">
+		<?php
+			echo do_shortcode('[smartslider3 slider="3"]');
+		?>
     </div><!-- .section-hero -->
-
-
     <div class="section-services py-4">
       <div class="container">
         <div class="row">
